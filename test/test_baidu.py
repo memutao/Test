@@ -1,8 +1,9 @@
-import os
 import time
 import unittest
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
 from utils.config import Config, DRIVER_PATH
 
 
@@ -13,8 +14,7 @@ class TestBaiDu(unittest.TestCase):
     locator_result = (By.XPATH, '//div[contains(@class, "result")]/h3/a')
 
     def setUp(self) -> None:
-        self.driver = webdriver.Chrome(executable_path=
-                                       DRIVER_PATH + '\chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path=DRIVER_PATH + '\chromedriver.exe')
         self.driver.get(self.URL)
 
     def tearDown(self) -> None:
@@ -36,6 +36,6 @@ class TestBaiDu(unittest.TestCase):
         for link in links:
             print(link.text)
 
+
 if __name__ == '__main__':
     unittest.main()
-
